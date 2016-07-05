@@ -1,10 +1,10 @@
 Array.prototype.concat = function(ar) {
 	var results = new Array(this.length + ar.length);
-	for (var i = 0, len = this.length; i < len; i++) {
+	for (var i = 0, len1 = this.length; i < len1; i++) {
 		results[i] = this[i];
 	}
-	for (var i = 0, len = ar.length; i < len; i++) {
-		results[len + i] = ar[i];
+	for (var j = 0, len2 = ar.length; j < len2; j++) {
+		results[len2 + j] = ar[j];
 	}
 	
 	return results;

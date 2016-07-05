@@ -9,8 +9,8 @@ Array.prototype.splice = function(start, num) {
 	for (var i = start + num + delta; i < newlen + delta + 1; i++) {
 		this[i] = this[i - delta];
 	}
-	for (var i = start; i < start + additions.length; i++) {
-		this[i] = additions[i - start];
+	for (var j = start; j < start + additions.length; j++) {
+		this[j] = additions[j - start];
 	}
 	
 	this.length = newlen;
