@@ -3,7 +3,7 @@ Function.curry = function(__method) {
 		return __method;
 	}
 	
-	var args = $A(arguments).slice(1);
+	var args = arguments.slice(1);
 	return function() {
 		return __method.apply(this, args.concat(arguments));
 	}

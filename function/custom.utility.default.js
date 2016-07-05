@@ -3,8 +3,8 @@ Function.default = function(__method) {
 		return __method;
 	}
 	
-	var args = $A(arguments).slice(1);
+	var args = arguments.slice(1);
 	return function() {
-		return __method.apply(this, $A(arguments).concat(args.slice(arguments.length)));
+		return __method.apply(this, arguments.concat(args.slice(arguments.length)));
 	};
 };

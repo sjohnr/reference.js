@@ -3,8 +3,8 @@ Function.rcurry = function(__method) {
 		return __method;
 	}
 	
-	var args = $A(arguments);
+	var args = arguments;
 	return function() {
-		return __method.apply(this, $A(arguments).concat(args));
+		return __method.apply(this, arguments.concat(args));
 	}
 };

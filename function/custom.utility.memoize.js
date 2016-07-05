@@ -1,7 +1,7 @@
 Function.memoize = function(__method) {
 	var memo = {};
 	return function() {
-		var key = $A(arguments).join("§");
+		var key = arguments.join(":::");
 		if (key in memo) {
 			return memo[key];
 		}

@@ -3,7 +3,7 @@ Function.prototype.curry = function() {
 		return this;
 	}
 	
-	var __method = this, args = $A(arguments);
+	var __method = this, args = arguments;
 	return function() {
 		return __method.apply(this, args.concat(arguments));
 	}
