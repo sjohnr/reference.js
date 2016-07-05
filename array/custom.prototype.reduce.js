@@ -1,3 +1,7 @@
-Array.prototype.reduce = function() {
-	return this.length > 1 ? this : this[0];
+Array.prototype.reduce = function(iterator, seed) {
+	for (var i = 0, len = this.length; i < len; i++) {
+		seed = iterator(this[i], i, seed);
+	}
+	
+	return seed;
 };
