@@ -1,7 +1,9 @@
-Object.update = function(obj, obj2) {
+Object.update = function(obj1, obj2) {
 	for (var key in obj2) {
-		obj[key] = obj2[key];
+		if (obj2.hasOwnProperty(key)) {
+			obj1[key] = obj2[key];
+		}
 	}
 	
-	return obj;
+	return obj1;
 };

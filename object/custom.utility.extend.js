@@ -6,7 +6,9 @@ Object.extend = function(destination, source) {
 	destination.prototype = new obj();
 	destination.prototype.constructor = destination;
 	for (var key in proto) {
-		destination.prototype[key] = proto[key];
+		if (proto.hasOwnProperty(key)) {
+			destination.prototype[key] = proto[key];
+		}
 	}
 	
 	destination.prototype.superclass = source;

@@ -1,7 +1,9 @@
 Object.values = function(obj) {
 	var results = [];
 	for (var key in obj) {
-		results.push(obj[key]);
+		if (obj.hasOwnProperty(key)) {
+			results.push(obj[key]);
+		}
 	}
 	
 	return results;
