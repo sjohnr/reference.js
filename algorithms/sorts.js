@@ -1,7 +1,8 @@
 module.exports = {
   bubbleSort: require('./bubbleSort'),
   heapSort: require('./heapSort'),
+  insertionSort: require('./insertionSort'),
   mergeSort: require('./mergeSort'),
   quickSort: require('./quickSort'),
-  insertionSort: require('./insertionSort')
+  selectionSort: require('./selectionSort')
 };
