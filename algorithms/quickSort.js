@@ -6,7 +6,7 @@ function doSort(src, start, end) {
       while (src[i] < pivot) i++;
       while (src[j] > pivot) j--;
       if (i < j) swap(src, i++, j--);
-    } while (i < j);
+    } while (i <= j);
 
     doSort(src, start, j + 1);
     doSort(src, j + 1, end);
