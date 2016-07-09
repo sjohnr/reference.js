@@ -5,11 +5,11 @@ function doSort(src, start, end) {
     do {
       while (src[i] < pivot) i++;
       while (src[j] > pivot) j--;
-      if (i <= j) swap(src, i++, j--);
-    } while (i <= j);
+      if (i < j) swap(src, i++, j--);
+    } while (i < j);
 
-    doSort(src, start, j + 1);
-    doSort(src, j + 1, end);
+    doSort(src, start, j);
+    doSort(src, j, end);
   }
 }
 
