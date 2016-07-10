@@ -1,4 +1,5 @@
 var wrapSort = require('./wrapSort');
+var swap = require('./swap');
 
 function heapify(src, start, end) {
   for (var i = parent(end); i >= start; i--) {
@@ -23,12 +24,6 @@ function swapChild(src, start, end, child) {
     swap(src, start, child);
     siftDown(src, child, end);
   }
-}
-
-function swap(src, i, j) {
-  var x = src[i];
-  src[i] = src[j];
-  src[j] = x;
 }
 
 function parent(start) {

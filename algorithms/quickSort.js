@@ -1,4 +1,5 @@
 var wrapSort = require('./wrapSort');
+var swap = require('./swap');
 
 function quickSort(src, start, end) {
   var length = end - start;
@@ -14,12 +15,6 @@ function quickSort(src, start, end) {
     quickSort(src, start, j);
     quickSort(src, j + 1, end);
   }
-}
-
-function swap(src, i, j) {
-  var x = src[i];
-  src[i] = src[j];
-  src[j] = x;
 }
 
 module.exports = wrapSort(quickSort);
