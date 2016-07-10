@@ -1,13 +1,15 @@
-function heapify(src) {
-  for (var len = src.length, i = parent(len); i >= 0; i--) {
-    siftDown(src, i, len);
+var wrapSort = require('./wrapSort');
+
+function heapify(src, start, end) {
+  for (var i = parent(end); i >= start; i--) {
+    siftDown(src, i, end);
   }
 }
 
-function doSort(src) {
-  for (var len = src.length, i = len - 1; i > 0; i--) {
-    swap(src, 0, i);
-    siftDown(src, 0, i);
+function doSort(src, start, end) {
+  for (var i = end - 1; i > start; i--) {
+    swap(src, start, i);
+    siftDown(src, start, i);
   }
 }
 
@@ -33,9 +35,9 @@ function parent(start) {
   return Math.floor((start - 1) / 2);
 }
 
-function heapSort(src) {
-  heapify(src);
-  doSort(src);
+function heapSort(src, start, end) {
+  heapify(src, start, end);
+  doSort(src, start, end);
 }
 
-module.exports = heapSort;
+module.exports = wrapSort(heapSort);

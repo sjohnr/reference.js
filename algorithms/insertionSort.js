@@ -1,5 +1,7 @@
-function insertionSort(src) {
-  for (var i = 1, len = src.length; i < len; i++) {
+var wrapSort = require('./wrapSort');
+
+function insertionSort(src, start, end) {
+  for (var i = start + 1; i < end; i++) {
     for (var j = i; j > 0 && src[j - 1] > src[j]; j--) {
       swap(src, j - 1, j);
     }
@@ -12,4 +14,4 @@ function swap(src, i, j) {
   src[j] = x;
 }
 
-module.exports = insertionSort;
+module.exports = wrapSort(insertionSort);

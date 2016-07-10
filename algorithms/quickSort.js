@@ -1,4 +1,6 @@
-function doSort(src, start, end) {
+var wrapSort = require('./wrapSort');
+
+function quickSort(src, start, end) {
   var length = end - start;
   if (length > 1) {
     var pivot = src[start + Math.floor(length / 2)], i = start, j = end - 1;
@@ -8,8 +10,8 @@ function doSort(src, start, end) {
       if (i < j) swap(src, i++, j--);
     } while (i < j);
 
-    doSort(src, start, j);
-    doSort(src, j, end);
+    quickSort(src, start, j);
+    quickSort(src, j, end);
   }
 }
 
@@ -19,8 +21,4 @@ function swap(src, i, j) {
   src[j] = x;
 }
 
-function quickSort(src) {
-  doSort(src, 0, src.length);
-}
-
-module.exports = quickSort;
+module.exports = wrapSort(quickSort);

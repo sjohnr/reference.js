@@ -1,3 +1,5 @@
+var wrapSort = require('./wrapSort');
+
 function doSort(src, dest, start, end) {
   var length = end - start;
   if (length > 1) {
@@ -18,8 +20,8 @@ function merge(src, dest, start, mid, end) {
   }
 }
 
-function mergeSort(src) {
-  doSort(src.slice(0), src, 0, src.length);
+function mergeSort(src, start, end) {
+  doSort(src.slice(0), src, start, end);
 }
 
-module.exports = mergeSort;
+module.exports = wrapSort(mergeSort);
